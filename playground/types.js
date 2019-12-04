@@ -1,5 +1,6 @@
 /* eslint-disable*/
-/*const name = 'Eric';
+/* Strings
+const name = 'Eric';
 const middle = "James";
 const last = `Jonelunas`;
 
@@ -43,7 +44,8 @@ document.body.innerHTML = html;
 /* Dont build websites like this
 innerHTML is for example purposes only
 */
-/*
+
+/* Numbers
 const age = 37;
 const name = 'Eric';
 // typeof then variable name in console will tell you what type it is.
@@ -58,3 +60,14 @@ const eachKidGets = Math.floor(smarties / kids);
 const dadGets = smarties % kids;
 console.log(`Each kid gets ${eachKidGets}`);
 */
+
+
+/* object 
+const person = {
+    first: 'Eric',
+    last: 'Jonelunas',
+    age: 37
+};
+//use dot notation(most common) person.first to find information
+*/
+
