@@ -1,1 +1,1 @@
-##  This is my attempt at Wes Bos' Beginner javascript.
+### Javascript Fundamentals.
