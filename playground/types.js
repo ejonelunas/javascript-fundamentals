@@ -1,5 +1,5 @@
 /* eslint-disable*/
-const name = 'Eric';
+/*const name = 'Eric';
 const middle = "James";
 const last = `Jonelunas`;
 
@@ -39,6 +39,22 @@ const html = `
 `;
 
 document.body.innerHTML = html;
+*/
 /* Dont build websites like this
 innerHTML is for example purposes only
+*/
+/*
+const age = 37;
+const name = 'Eric';
+// typeof then variable name in console will tell you what type it is.
+// integer is a whole number, float has a decimal
+
+//const a = 10;
+//const b = 20;
+
+const smarties = 20;
+const kids = 3;
+const eachKidGets = Math.floor(smarties / kids);
+const dadGets = smarties % kids;
+console.log(`Each kid gets ${eachKidGets}`);
 */
