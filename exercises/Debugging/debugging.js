@@ -4,25 +4,27 @@ const people = [
   { name: 'Charlie', employed: false, country: 'Underworld' },
 ];
 
-people.forEach((person, index) => {
-  console.group(`${person.name}`);
-  console.groupEnd(`${person.name}`);
-
-});
-
-console.table(people);
-
 // Console Methods
 
+people.forEach((person, index) => {
+  console.info(person.name);
+});
+
+// console.table(people);
+
 // Callstack
+// Learn to read the call stack.  Most errors will tell you where they happened and which function called them.
 
 // Grabbing Elements
+// $0 will return what you currently have selected
 
 // Breakpoints
+// debugger keyword can be placed anywhere.  manually continue running JS with play button.
 
 // Scope
 
 // Network Requests
+// another that will take practice to understand, look at the network tab on console.
 
 // Break On Attribute
 
