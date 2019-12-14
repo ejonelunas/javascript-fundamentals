@@ -21,3 +21,10 @@
 // Classes
 const pic = document.querySelector('.bigUn');
 console.log(pic.classList);
+pic.classList.add('open');
+pic.classList.toggle('round');
+
+function toggleRound(params) {
+  pic.classList.toggle('round');
+}
+pic.addEventListener('click', toggleRound);
