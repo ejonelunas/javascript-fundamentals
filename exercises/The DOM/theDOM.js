@@ -28,3 +28,11 @@ function toggleRound(params) {
   pic.classList.toggle('round');
 }
 pic.addEventListener('click', toggleRound);
+
+pic.alt = 'placeHolder'; // setter
+console.log(pic.alt); // getter
+console.log(pic.naturalWidth); // getter will return zero because its run before the image is loaded
+// must listen for the Load event on either the window or individual pic
+
+const custom = document.querySelector('.custom')
+console.log(custom.dataset);
