@@ -2,6 +2,7 @@ const eric = document.querySelector('.eric');
 eric.addEventListener('click', function(event) {
   // console.log('clicked the button');
   event.preventDefault();
+  // eslint-disable-next-line no-restricted-globals
   const shouldPageChange = confirm(
     'This website is not complete, do you wish to continue'
   );
@@ -14,12 +15,12 @@ eric.addEventListener('click', function(event) {
 const signupForm = document.querySelector('[name="signup"]');
 
 signupForm.addEventListener('submit', function name(event) {
-    console.log(event);
-    event.preventDefault();
+  console.log(event);
+  event.preventDefault();
 });
 
 function logEvent(event) {
-    console.log(event.type)
+  console.log(event.type);
 }
 
 signupForm.name.addEventListener('keyup', logEvent);
