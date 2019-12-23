@@ -14,13 +14,39 @@ butts.removeEventListener('click', handleClick);
 // listen on multiple items
 const buyButtons = document.querySelectorAll('button.buy');
 
-function buyItem() {
-  console.log('buying item');
+function handleBuyButtonClick(event) {
+  const button = event.target;
+  // console.log(button.textContent);
+  console.log('you are buying it');
+  // console.log(parseFloat(event.target.dataset.price));
+  // console.log(event.currentTarget);
+  // stop this event from bubbling up
+  event.stopPropagation();
 }
 
-function attachListenerBuyButton(buyButton) {
-  console.log('binding the buy button');
-  buyButton.addEventListener('click', buyItem);
-}
+buyButtons.forEach(function(buyButton) {
+  buyButton.addEventListener('click', handleBuyButtonClick);
+});
 
-buyButtons.forEach(attachListenerBuyButton);
+window.addEventListener('click', function (event) {
+    console.log('you clicked the window');
+    event.stopPropagation();
+});
+
+const photEl = document.querySelector('.photo');
+
+photEl.addEventListener('mouseenter', function (event) {
+    console.log(event.currentTarget);
+    console.log(this);
+});
+
+// function buyItem() {
+//   console.log('buying item');
+// }
+
+// function attachListenerBuyButton(buyButton) {
+//   console.log('binding the buy button');
+//   buyButton.addEventListener('click', buyItem);
+// }
+
+// buyButtons.forEach(attachListenerBuyButton);
