@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objects</title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+    <input type="text" name="first" value="eric">
+    <script>
+        const age = 37;
+        const person = {
+            // properties on left: values on the right
+            // values can be any type
+            // cannot trust the order of properties placed in object
+            // comma after final property allows for easy addition of new property
+            name: 'eric',
+            age,
+            clothing: {
+                shirts: 100,
+                pants: 12,
+            },
+            sayHello: function (greeting = 'Hello' ) { 
+                return `${greeting} ${this.name}`
+             }
+        };
+
+        person.job = 'Web Developer';
+        person.age = 22;
+        // properties on object can be changed even though its set as const
+        // entire object(person) cannot be over written
+
+        const nameInput = document.querySelector('[name="first"]');
+        const name = nameInput ? nameInput.value : '';
+        console.log(name);
+        console.log(delete person.job);
+        console.log(person);
+
+// methods
+
+    </script>
+</body>
+
+</html>
