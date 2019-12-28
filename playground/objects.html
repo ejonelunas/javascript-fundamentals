@@ -11,37 +11,99 @@
 
 <body>
     <input type="text" name="first" value="eric">
+    <script src="https:unpkg.com/lodash"></script>
     <script>
-        const age = 37;
-        const person = {
-            // properties on left: values on the right
-            // values can be any type
-            // cannot trust the order of properties placed in object
-            // comma after final property allows for easy addition of new property
-            name: 'eric',
-            age,
+        // const age = 37;
+        // const person = {
+        //     // properties on left: values on the right
+        //     // values can be any type
+        //     // cannot trust the order of properties placed in object
+        //     // comma after final property allows for easy addition of new property
+        //     name: 'eric',
+        //     age,
+        //     clothing: {
+        //         shirts: 100,
+        //         pants: 12,
+        //     },
+        //     sayHello: function (greeting = 'Hello' ) { 
+        //         return `${greeting} ${this.name}`
+        //      }
+        // };
+
+        // person.job = 'Web Developer';
+        // person.age = 22;
+        // // properties on object can be changed even though its set as const
+        // // entire object(person) cannot be over written
+
+        // const nameInput = document.querySelector('[name="first"]');
+        // const name = nameInput ? nameInput.value : '';
+        // // console.log(name);
+        // // console.log(delete person.job);
+        // // console.log(person);
+
+        let name1 = 'eric';
+        let name2 = 'eric';
+        console.log(name1 === name2);
+
+        const person1 = {
+            first: 'eric',
+            last: 'jonelunas',
             clothing: {
                 shirts: 100,
-                pants: 12,
-            },
-            sayHello: function (greeting = 'Hello' ) { 
-                return `${greeting} ${this.name}`
-             }
+                pants: 20,
+            }
+        };
+        const person2 = {
+            first: 'eric',
+            last: 'jonelunas',
         };
 
-        person.job = 'Web Developer';
-        person.age = 22;
-        // properties on object can be changed even though its set as const
-        // entire object(person) cannot be over written
+        // person3 is not a copy, it is pointing to the original object
 
-        const nameInput = document.querySelector('[name="first"]');
-        const name = nameInput ? nameInput.value : '';
-        console.log(name);
-        console.log(delete person.job);
-        console.log(person);
+        // const person3 = person1;
+        // person3.first = 'james';
+        // person1 and person3 are now both named james
 
-// methods
+        // this is a created copy of an object
 
+        // const person3 = {...person1};
+        // person3.first = 'james';
+
+        // only person 3 is updated here
+        // this only goes one level deep, cannot reference nested objects
+
+        const person3 = _.cloneDeep(person1);
+        person3.first = 'james';
+        person3.clothing.shirts = 1000;
+
+        const meatInventory = {
+            bacon: 2,
+            sausage: 3,
+            hamburger: 10,
+        };
+
+        const veggieInventory = {
+            lettuce: 5,
+            tomato: 8,
+            onion: 15,
+        };
+
+        const inventory = {
+            ...meatInventory,
+            ...veggieInventory,
+        }
+
+        function doStuff(data) {
+            data = 'something else';
+            console.log(data);
+        }
+
+        function doStuff2(data) {
+            data.tomatoes = 100000000
+            console.log(data);
+        }
+
+        doStuff2(inventory);
     </script>
 </body>
 
