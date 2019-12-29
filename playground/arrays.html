@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+    <script>
+        const names = ['eric', 'nicky', 'bosco'];
+
+        // find the first
+        // console.log(names[0]);
+        // find the length
+        // console.log(names.length);
+        // find the total amount
+        // console.log(names[names.length - 1]);
+        // add to end of array
+        names.push('charlie');
+        // add to front of array
+        names.unshift('olive')
+        // console.log(names);
+
+        const djs = ['dawn wall', 'logistics', 'keeno', 'nelver'];
+        // add maduk between logistics and keeno
+        const newDjs = [
+            ...djs.slice(0, 2),
+            'maduk',
+            ...djs.slice(2)
+        ];
+        // console.log(djs);
+        // console.log(newDjs);
+        // remove keeno from array
+        const newDjs2 = [
+            ...newDjs.slice(0, 3),
+            ...newDjs.slice(4),
+        ];
+        // console.log(newDjs2);
+
+        const comments = [{
+                text: 'learning arrays',
+                id: 123
+            },
+            {
+                text: 'great',
+                id: 133
+            },
+            {
+                text: 'wonderful story',
+                id: 233
+            },
+            {
+                text: 'awesome list of djs',
+                id: 333
+            },
+            {
+                text: 'arrays are a pain in the ass',
+                id: 433
+            },
+        ];
+
+        function deleteComment(id, comments) {
+            // find index of item in array
+            const commentIndex = comments.findIndex(comment => comment.id === id);
+            // new array without that item in it
+            return [
+                ...comments.slice(0, commentIndex),
+                ...comments.slice(commentIndex + 1),
+            ];
+            // return new array
+        }
+
+        const nickyIndex = names.findIndex(name => name === 'nicky');
+        console.log(nickyIndex);
+        // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, ];
+        // console.log(numbers);
+        // numbers.splice(3, 2);
+        // console.log(numbers);
+
+        // // mutation method - they do change the original data
+        // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, ];
+        // // use a mutation method with no change to original data
+        // // take a copy of the array
+        // const numbersReversed = [...numbers];
+        // numbersReversed.reverse();
+        // // numbers.reverse();
+        // console.log(numbers)
+        // // immutable - they do not change original data
+        // const newArray = numbers.slice(2, 4);
+        // console.log(newArray);
+    </script>
+
+</body>
+
+</html>
