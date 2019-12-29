@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maps</title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+    <ul class="prizes"></ul>
+    <script>
+        const person1 = {
+            name: 'eric',
+            age: 37,
+        };
+
+        const myMap = new Map();
+        // .set()
+        myMap.set('name', 'eric');
+        myMap.set(100, 'this is a number');
+        // map allows any value to be a key or value
+        myMap.set(person1, 'learning javascript');
+        // console.log(myMap);
+
+        myMap.get(person1);
+
+        const score = 300;
+        const prizes = new Map();
+        prizes.set(100, 'bear');
+        prizes.set(200, 'duck');
+        prizes.set(300, 'car');
+        // console.log(`you win a ${prizes.get(score)}`);
+        // order is guaranteed with map
+        const ul = document.querySelector('.prizes')
+        for (const /*prize*/ [points, prize] of prizes) {
+            const li = `<li>${points} - ${prize}</li>`;
+            ul.insertAdjacentHTML('beforeend', li);
+        }
+        // .has()
+
+        // .delete();
+    </script>
+</body>
+
+</html>
