@@ -33,7 +33,7 @@
         const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222, ];
 
         const feedback = [{
-                comment: 'Love the burgs',
+                comment: 'Love the burgers',
                 rating: 4
             },
             {
@@ -126,36 +126,60 @@
         if (!toppingsIncludes) {
             toppings.push('hot sauce');
         }
-        console.log(toppings);
+        // console.log(toppings);
         // flip those toppings around with reverse()
         // toppings.reverse(); // not saved anywhere
         const reversedToppings = [...toppings].reverse();
-        console.log(reversedToppings);
+        // console.log(reversedToppings);
+
         /*
           Callback Methods
         */
 
         // find the first rating that talks about a burger with find()
+        function findBurgerRating(singleFeedback) {
+            return singleFeedback.comment.includes('burger');
+        }
+
+        function findByWord(word) {
+            return function (singleFeedback) {
+                return singleFeedback.comment.includes(word);
+            }
+        }
+        const burgerRating = feedback.find(findByWord('burger'));
+        const smoothieRating = feedback.find(findByWord('Smoothie'));
+        // const burgerRating = feedback.find(findBurgerRating);
+        // console.log(burgerRating);
+        // console.log(smoothieRating);
 
         // find all ratings that are above 2 with filter()
-
+        function filterByMinRating(minRating) {
+            return function (singleFeedback) {
+                return singleFeedback.rating >= minRating;
+            }
+        }
+        const bestReviews = feedback.filter(filterByMinRating(4));
+        // console.table(bestReviews);
         // find all ratings that talk about a burger with filter()
-
+        const burgerRatings = feedback.filter(findByWord('burger'));
+        // console.table(burgerRatings);
         // Remove the one star rating however you like!
-
+        const badRatingsRemoved = feedback.filter(single => single.rating !== 1);
+        // console.table(badRatingsRemoved);
         // check if there is at least 5 of one type of meat with some()
-
+        const enoughOfOneMeat = Object.values(meats).some(meatValue => meatValue >= 5);
+        // console.log(enoughOfOneMeat);
         // make sure we have at least 3 of every meat with every()
-
+        const enoughOfEveryMeat = Object.values(meats).every(meatValue => meatValue >= 3);
+        // console.log(enoughOfEveryMeat);
         // sort the toppings alphabetically with sort()
-
+        // console.log(toppings.sort());
         // sort the order totals from most expensive to least with .sort()
-
-        // Sort the prices with sort()
-
-        /*
-          Looping Methods (next)
-        */
+        function numberSort(a, b) {
+            return b - a;
+        }
+        console.log(orderTotals.sort(numberSort));
+        
     </script>
 
 </body>
