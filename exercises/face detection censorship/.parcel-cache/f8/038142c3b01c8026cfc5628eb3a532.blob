@@ -1,0 +1,23 @@
+const video = document.querySelector('.webcam');
+const canvas = document.querySelector('.video');
+const ctx = canvas.getContext('2d');
+const faceCanvas = document.querySelector('.face');
+const faceCtx = canvas.getContext('2d');
+const faceDetector = new window.FaceDetector(); // console.log(video, canvas, faceCanvas, faceDetector);
+// function to populate user video
+
+async function populateVideo() {
+  const stream = await navigator.mediaDevices.getUserMedia({
+    video: true
+  });
+  video.srcObject = stream;
+  await video.play(); // size canvas to be same size as video
+
+  console.log(video.videoWidth);
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  faceCanvas.width = video.videoWidth;
+  faceCanvas.height = video.videoHeight;
+}
+
+populateVideo();
